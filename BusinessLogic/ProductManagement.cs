@@ -1,4 +1,5 @@
 ﻿using Common.Entities;
+using DataAccess.Facade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,27 +12,28 @@ namespace BusinessLogic
     {
         public IList<Product> GetAllProducts()
         {
-            return Repo.GetAll();
+            return (IList<Product>)ProductFacade.GetInstance().GetAll();
+        }
+
+        public Product Get(int id)
+        {
+            return ProductFacade.GetInstance().Get(id);
         }
 
         public void AddProduct(Product prod)
         {
-            Repo.Add(prod);
-        }
-    }
-
-    public static class Repo
-    {
-        private static IList<Product> data = new List<Product>();
-
-        public static IList<Product> GetAll()
-        {
-            return data;
+            ProductFacade.GetInstance().Create(prod);
         }
 
-        public static void Add(Product prod)
+
+        public void Update(Product prod)
         {
-            data.Add(prod);
+             ProductFacade.GetInstance().Update(prod);
+        }
+
+        public void Delete(Product prod)
+        {
+            ProductFacade.GetInstance().Delete(prod);
         }
     }
 }
