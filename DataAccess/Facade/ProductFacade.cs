@@ -9,20 +9,10 @@ namespace DataAccess.Facade
 {
     public class ProductFacade : IFacadeCRUD<Common.Entities.Product>
     {
-        private static ProductFacade instance = new ProductFacade();
-        private static ProductDAOSql implementation = new ProductDAOSql(); // todo: esto podría ser un factory
+        private ProductDAOSql implementation; // todo: esto podría ser un factory
 
-        /// <summary>
-        /// Private constructor (singleton).
-        /// </summary>
-        private ProductFacade() { }
-
-        /// <summary>
-        /// Gets the singleton instance.
-        /// </summary>
-        public static ProductFacade GetInstance()
-        {
-            return instance;
+        public ProductFacade() {
+            implementation = new ProductDAOSql();
         }
 
         public void Create(Common.Entities.Product p)
@@ -47,10 +37,14 @@ namespace DataAccess.Facade
 
         public IEnumerable<Common.Entities.Product> GetAll()
         {
-            List<Common.Entities.Product> products = new List<Common.Entities.Product>();
-            IEnumerable<Product> dataEntityProducts = implementation.GetAll();
+            lppaDbContext db = new lppaDbContext();
+            
 
-            foreach(Product e in dataEntityProducts)
+            List<Common.Entities.Product> products = new List<Common.Entities.Product>();
+            //IEnumerable<Product> dataEntityProducts = implementation.GetAll();
+            IEnumerable<Product> dataEntityProducts = db.Product;
+
+            foreach (Product e in dataEntityProducts)
             {
                 products.Add(dataEntityProductToProduct(e));
             }

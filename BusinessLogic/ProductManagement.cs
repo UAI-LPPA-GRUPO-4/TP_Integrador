@@ -10,30 +10,32 @@ namespace BusinessLogic
 {
     public class ProductManagement : IProductManagement
     {
+        ProductFacade facade = new ProductFacade();
+        
         public IList<Product> GetAllProducts()
         {
-            return (IList<Product>)ProductFacade.GetInstance().GetAll();
+            return (IList<Product>)facade.GetAll();
         }
 
         public Product Get(int id)
         {
-            return ProductFacade.GetInstance().Get(id);
+            return facade.Get(id);
         }
 
         public void AddProduct(Product prod)
         {
-            ProductFacade.GetInstance().Create(prod);
+            facade.Create(prod);
         }
 
 
         public void Update(Product prod)
         {
-             ProductFacade.GetInstance().Update(prod);
+             facade.Update(prod);
         }
 
         public void Delete(Product prod)
         {
-            ProductFacade.GetInstance().Delete(prod);
+            facade.Delete(prod);
         }
     }
 }
