@@ -32,7 +32,7 @@ namespace ComprasOnline.Controllers
             form.CreatedBy = "testUser";
             form.ChangedBy = "testUser";
 
-            ProductManagement.AddProduct(form);
+            bool result = ProductManagement.AddProduct(form);
             return RedirectToAction("Index");
         }
     }

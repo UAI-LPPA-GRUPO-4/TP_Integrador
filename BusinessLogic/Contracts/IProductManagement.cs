@@ -6,6 +6,6 @@ namespace BusinessLogic
     public interface IProductManagement
     {
         IList<Product> GetAllProducts();
-        void AddProduct(Product prod);
+        bool AddProduct(Product prod);
     }
 }
