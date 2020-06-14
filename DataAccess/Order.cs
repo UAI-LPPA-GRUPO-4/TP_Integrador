@@ -12,32 +12,27 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Order()
         {
             this.OrderDetail = new HashSet<OrderDetail>();
-            this.Rating = new HashSet<Rating>();
         }
     
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public int ArtistId { get; set; }
-        public string Image { get; set; }
-        public double Price { get; set; }
-        public int QuantitySold { get; set; }
-        public double AvgStars { get; set; }
+        public int UserId { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public double TotalPrice { get; set; }
+        public int OrderNumber { get; set; }
+        public int ItemCount { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime ChangedOn { get; set; }
         public string ChangedBy { get; set; }
     
-        public virtual Artist Artist { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetail { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rating> Rating { get; set; }
     }
 }

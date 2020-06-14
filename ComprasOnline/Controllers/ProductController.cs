@@ -29,19 +29,18 @@ namespace ComprasOnline.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection form)
         {
-            var producto = new Product();
+            var product = new Product();
 
-            producto.CreatedBy = "testUser";
-            producto.ChangedBy = "testUser";
+            product.CreatedBy = "testUser";
+            product.ChangedBy = "testUser";
 
-            producto.Title = form["title"];
-            producto.Description = form["description"];
-            producto.ArtistId = Convert.ToInt32(form["artistId"]);
-            producto.Image = form["image"];
-            producto.Price = Convert.ToInt32(form["price"]);
+            product.Title = form["title"];
+            product.Description = form["description"];
+            product.ArtistId = Convert.ToInt32(form["artistId"]);
+            product.Image = form["image"];
+            product.Price = Convert.ToInt32(form["price"]);
 
-            ProductManagement.AddProduct(producto);
-
+            bool result = ProductManagement.AddProduct(product);
             return RedirectToAction("Index");
         }
     }

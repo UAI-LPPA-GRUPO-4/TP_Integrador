@@ -12,31 +12,30 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public User()
         {
-            this.OrderDetail = new HashSet<OrderDetail>();
+            this.Order = new HashSet<Order>();
             this.Rating = new HashSet<Rating>();
         }
     
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public int ArtistId { get; set; }
-        public string Image { get; set; }
-        public double Price { get; set; }
-        public int QuantitySold { get; set; }
-        public double AvgStars { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public System.DateTime SignupDate { get; set; }
+        public int OrderCount { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime ChangedOn { get; set; }
         public string ChangedBy { get; set; }
     
-        public virtual Artist Artist { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rating> Rating { get; set; }
     }

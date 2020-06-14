@@ -298,6 +298,20 @@ picture {
   font-size: 24px;
 }
 
+/*PRODUCT LIST*/
+.product-list {
+  margin: 80px 50px 0px 50px;
+  background: rgba(38, 38, 38, 0.58);
+  border-radius: 43px;
+  padding: 30px;
+  width: fit-content;
+}
+
+  .product-list td, .product-list th{
+    padding: 15px;
+  }
+}
+
 /* ABM Producto */
 /* TODO: evaluar poner esto en css separado */
 .form-control {
