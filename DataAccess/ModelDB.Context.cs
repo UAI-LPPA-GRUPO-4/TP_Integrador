@@ -12,7 +12,6 @@ namespace DataAccess
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Configuration;
     
     public partial class DBEntities : DbContext
     {

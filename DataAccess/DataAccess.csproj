@@ -59,9 +59,13 @@
     <Compile Include="CartItem.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Contracts\IProductDAO.cs" />
     <Compile Include="Error.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Facade\IFacadeCRUD.cs" />
+    <Compile Include="Facade\ProductFacade.cs" />
+    <Compile Include="Implementations\ProductDAOSql.cs" />
     <Compile Include="ModelDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
