@@ -25,9 +25,9 @@ namespace DataAccess.Facade
             implementation.Update(productToDataEntityProduct(p));
         }
 
-        public void Delete(Common.Entities.Product p)
+        public void Delete(int id)
         {
-            implementation.Delete(productToDataEntityProduct(p));
+            implementation.Delete(id);
         }
 
         public Common.Entities.Product Get(int id)
@@ -56,6 +56,7 @@ namespace DataAccess.Facade
         {
             Product entity = new Product();
 
+            entity.Id = p.Id;
             entity.ArtistId = p.ArtistId;
             entity.AvgStars = p.AvgStars;
             entity.ChangedBy = p.ChangedBy;
@@ -63,6 +64,7 @@ namespace DataAccess.Facade
             entity.CreatedBy = p.CreatedBy;
             entity.CreatedOn = p.CreatedOn;
             entity.Description = p.Description;
+            entity.QuantitySold = p.QuantitySold;
             entity.Image = p.Image;
             entity.Price = p.Price;
             entity.Title = p.Title;
@@ -74,12 +76,15 @@ namespace DataAccess.Facade
         {
             Common.Entities.Product product = new Common.Entities.Product();
 
+            product.Id = entity.Id;
             product.ArtistId = entity.ArtistId;
-            product.AvgStars = entity.ArtistId;
+            product.AvgStars = entity.AvgStars;
             product.ChangedBy = entity.ChangedBy;
             product.ChangedOn = entity.ChangedOn;
             product.CreatedBy = entity.CreatedBy;
+            product.CreatedOn = entity.CreatedOn;
             product.Description = entity.Description;
+            product.QuantitySold = entity.QuantitySold;
             product.Image = entity.Image;
             product.Price = entity.Price;
             product.Title = entity.Title;

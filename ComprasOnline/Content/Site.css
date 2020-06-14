@@ -332,12 +332,16 @@ picture {
 .button-success, .button-default {
     color: white;
     border-radius: 5px;
-    font-size: 85%;
+    font-size: 90%;
     height: 35px;
 }
 
 .color-success {
     background: rgb(28, 190, 65);
+}
+
+.color-warning {
+    background: rgb(237, 94, 39);
 }
 
 .color-default {
@@ -356,7 +360,6 @@ picture {
     cursor: pointer;
     border: 1px solid transparent;
     padding: 6px 12px;
-    font-size: 14px;
     line-height: 1.42857143;
     border-radius: 4px;
     user-select: none;
@@ -374,4 +377,27 @@ picture {
 
 .btn:hover, .btn:focus, .btn.focus {
     color: #333;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+}
+
+select {
+    display: block;
+    width: 80%;
+    padding: 0px 12px;
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 15px 0px;
+}
+
+select option {
+    color: #555555;
 }

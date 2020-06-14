@@ -13,7 +13,7 @@ namespace DataAccess.Contracts
 
         void Update(Product p);
 
-        void Delete(Product p);
+        void Delete(int id);
 
         Product Get(int id);
 
