@@ -42,7 +42,7 @@ namespace ComprasOnline.Controllers
             product.ArtistId = Convert.ToInt32(form["artistId"]);
             product.Image = form["image"];
             product.QuantitySold = Convert.ToInt32(form["quantitySold"]);
-            product.AvgStars = Convert.ToDouble(form["avgStars"]);
+            product.AvgStars = double.Parse(form["avgStars"], System.Globalization.CultureInfo.InvariantCulture);
             product.Price = Convert.ToInt32(form["price"]);
 
             bool result = ProductManagement.AddProduct(product);
