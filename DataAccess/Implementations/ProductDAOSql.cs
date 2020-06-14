@@ -28,11 +28,12 @@ namespace DataAccess.Implementations
             }
         }
 
-        public void Delete(Product p)
+        public void Delete(int id)
         {
             using (DBEntities db = new DBEntities())
             {
-                db.Product.Remove(p);
+                Product product = db.Product.First(p => p.Id == id);
+                db.Product.Remove(product);
                 db.SaveChanges();
             }
         }

@@ -9,6 +9,6 @@ namespace BusinessLogic
         bool AddProduct(Product prod);
         Product Get(int id);
         void Update(Product prod);
-        void Delete(Product prod);
+        void Delete(int id);
     }
 }

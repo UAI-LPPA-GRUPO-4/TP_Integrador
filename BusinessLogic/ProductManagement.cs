@@ -67,9 +67,9 @@ namespace BusinessLogic
              facade.Update(prod);
         }
 
-        public void Delete(Common.Entities.Product prod)
+        public void Delete(int id)
         {
-            facade.Delete(prod);
+            facade.Delete(id);
         }
     }
 }
