@@ -12,6 +12,7 @@ namespace BusinessLogic
     public class ProductManagement : IProductManagement
     {
         ProductDB ProDB = new ProductDB();
+        ProductFacade facade = new ProductFacade();
 
         public IList<Common.Entities.Product> GetAllProducts()
         {
@@ -41,32 +42,32 @@ namespace BusinessLogic
             return listaproductos; //RETORNO LA LISTA
         }
 
-
-
-        ProductFacade facade = new ProductFacade();
-        
+        // todo: dejo opción por si lo queremos trabajar con el patrón Facade
         //public IList<Product> GetAllProducts()
         //{
         //    return (IList<Product>)facade.GetAll();
         //}
 
-        public Product Get(int id)
+        public Common.Entities.Product Get(int id)
         {
             return facade.Get(id);
         }
 
-        public void AddProduct(Product prod)
+        public bool AddProduct(Common.Entities.Product prod)
         {
             facade.Create(prod);
+
+            // todo: que el facade devuelva booleano, o hacer void esto directamente
+            return true;
         }
 
 
-        public void Update(Product prod)
+        public void Update(Common.Entities.Product prod)
         {
              facade.Update(prod);
         }
 
-        public void Delete(Product prod)
+        public void Delete(Common.Entities.Product prod)
         {
             facade.Delete(prod);
         }

@@ -37,8 +37,7 @@ namespace DataAccess.Facade
 
         public IEnumerable<Common.Entities.Product> GetAll()
         {
-            lppaDbContext db = new lppaDbContext();
-            
+            DBEntities db = new DBEntities();
 
             List<Common.Entities.Product> products = new List<Common.Entities.Product>();
             //IEnumerable<Product> dataEntityProducts = implementation.GetAll();
@@ -58,10 +57,11 @@ namespace DataAccess.Facade
             Product entity = new Product();
 
             entity.ArtistId = p.ArtistId;
-            entity.AvgStars = p.ArtistId;
+            entity.AvgStars = p.AvgStars;
             entity.ChangedBy = p.ChangedBy;
             entity.ChangedOn = p.ChangedOn;
             entity.CreatedBy = p.CreatedBy;
+            entity.CreatedOn = p.CreatedOn;
             entity.Description = p.Description;
             entity.Image = p.Image;
             entity.Price = p.Price;

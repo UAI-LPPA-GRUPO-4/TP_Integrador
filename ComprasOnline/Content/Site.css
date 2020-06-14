@@ -310,7 +310,6 @@ picture {
   .product-list td, .product-list th{
     padding: 15px;
   }
-}
 
 /* ABM Producto */
 /* TODO: evaluar poner esto en css separado */
@@ -319,7 +318,6 @@ picture {
     width: 80%;
     height: 22px;
     padding: 6px 12px;
-    font-size: 14px;
     color: #555555;
     background-color: #fff;
     border: 1px solid #ccc;
