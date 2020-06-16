@@ -1,33 +1,39 @@
-﻿<div class="example">
-	
-	<form action="/" method="post">
-		<h2>Formulario Ejemplo</h2>
+﻿@using Common.Entities;
+@model Product
 
-		<br />
-		<label for="number">Number</label>
-		<br />
-		<input name="number" type="text" placeholder="test number" class="input-text" />
 
-		<br />
-		<label for="checkItem">Check Button</label>
-		<br />
-		<input name="checkItem" type="checkbox" class="input-checkbox" />
+<div class="details">
 
-		<br />
-		<label for="radio">Radio</label>
-		<br />
+		<div class="form-dialog">
 
-		<input name="radio" type="radio" class="input-radius" />
-		<label for="radio">Opcion 1</label>
+				<h2>@Model.Title - @Model.ArtistId</h2>
 
-		<br />
+				<br />
+				<br />
+				<p class="details-description">@Model.Description</p>
+				
+				<picture>
+						<img class="details-product-picture" src="/Content/Images/Products/@Model.Image" alt="Imagen no disponible" />
+				</picture>
+				<div class="rating">
+						@for (int i = 0; i < Model.AvgStars; i++)
+						{
+								<span class="star-yellow">☆</span>
+						}
+						@for (int i = (int)Model.AvgStars; i < 5; i++)
+						{
+								<span class="star">☆</span>
+						}
+				</div>
 
-		<input name="radio" type="radio" class="input-radius" />
-		<label for="radio">Opcion 2</label>
-		<br />
+				<div class="details-price">
+						<p>U$S @Model.Price.-</p>
+				</div>
 
-		<br />
-		<input name="submit" type="submit" value="Submit" class="button-principal" />
-	</form>
-	
+				<button class="button-principal" onclick="location.href='@Url.Action("Add", "Cart", new { id = Model.Id})'">Añadir</button>
+
+				<br />
+
+		</div>
+
 </div>

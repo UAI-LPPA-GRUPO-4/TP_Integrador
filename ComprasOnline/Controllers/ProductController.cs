@@ -55,6 +55,25 @@ namespace ComprasOnline.Controllers
             return View(product);
         }
 
+        public ActionResult Details(int id)
+        {
+            Product product = ProductManagement.Get(id);
+            return View(product);
+        }
+
+
+        public ActionResult Search(string filter = null)
+        {
+            IList<Product> prod = null;
+            if (string.IsNullOrEmpty(filter))
+                prod = ProductManagement.GetAllProducts();
+            else
+                prod = ProductManagement.GetAllProducts().Where(x => x.Title == filter || x.Description.Contains(filter)).ToList();
+
+            return View(prod);
+        }
+
+
         [HttpPost]
         public ActionResult DoUpdate(Product product)
         {

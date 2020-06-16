@@ -110,7 +110,7 @@ a {
   text-decoration: none;
 }
 
-form {
+form, .form-dialog {
   background: rgba(38, 38, 38, 0.58);
   border-radius: 43px;
   padding: 30px;
@@ -253,11 +253,11 @@ footer p {
   width: 1000px;
 }
 
-picture {
-  position: absolute;
-  right: 15%;
-  top: 25%;
-  z-index: -1;
+.home picture {
+    position: absolute;
+    right: 15%;
+    top: 25%;
+    z-index: -1;
 }
 
 .price {
@@ -315,13 +315,96 @@ picture {
   font-size: 24px;
 }
 
+/*PRODCUt DETAILS*/
+.star-yellow {
+    font-size: 50px;
+    color: orange;
+}
+
+.details-description {
+    display: inline-flex;
+    width: 500px;
+    margin-right: 130px;
+}
+
+.star {
+    font-size: 50px;
+}
+
+.details picture {
+    float: right;
+}
+
+.details-product-picture {
+    height: 400px;
+}
+
+.details > .form-dialog {
+    margin: auto;
+    min-height: 500px;
+}
+
+.details-price {
+    display: inline-flex;
+    min-width: 200px;
+    border-radius: 43px;
+    background-color: #3C47D8;
+    margin: 25px;
+}
+
+.details-price p {
+    color: white;
+    font-family: Segoe UI;
+    font-size: 34px;
+    margin: 20px;
+}
+
+/*SEARCH*/
+.search > .form-dialog {
+    margin: auto;
+    min-width: 1000px;
+}
+
+.search form {
+    background-color: transparent;
+}
+
+.search-panel > .card {
+    border-radius: 0;
+    min-height: 0px;
+    min-width: 0px;
+    font-family: Segoe UI;
+    font-size: 20px;
+    padding: 5px;
+    background-color: transparent;
+    border: solid 1px whitesmoke;
+    margin: 20px;
+}
+
+.search-panel > .card > img {
+    height: 150px;
+}
+
+.search input[type="submit"] {
+    background-color: transparent;
+    height: 50px;
+    min-height: 0px;
+    min-width: 0px;
+    width: 180px;
+}
+
+.search input[type="submit"]:hover {
+    color: #656179;
+    border: solid 1px #372297;
+}
+
 /*PRODUCT LIST*/
 .product-list {
-  margin: 80px 50px 0px 50px;
-  background: rgba(38, 38, 38, 0.58);
-  border-radius: 43px;
-  padding: 30px;
-  width: fit-content;
+    margin: 80px 50px 0px 50px;
+    background: rgba(38, 38, 38, 0.58);
+    border-radius: 43px;
+    padding: 30px;
+    width: fit-content;
 }
 
   .product-list td, .product-list th{

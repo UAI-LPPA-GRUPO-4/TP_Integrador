@@ -196,6 +196,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,6 +214,7 @@
     <Content Include="Content\Images\left.icon.png" />
     <Content Include="Content\Images\Products\onofrio-pacenza-chascomus.jpg" />
     <Content Include="Content\Images\Products\onofrio-pacenza-PORTUARIA.png" />
+    <Content Include="Content\Images\Products\onofrio-serigrafia.jpg" />
     <Content Include="Content\Images\right.icon.png" />
     <Content Include="Content\Images\user.icon.png" />
     <Content Include="favicon.ico" />
@@ -249,6 +251,8 @@
     <Content Include="Views\Home\Example.cshtml" />
     <Content Include="Views\Product\Modify.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
