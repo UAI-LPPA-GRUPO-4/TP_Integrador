@@ -1,4 +1,10 @@
-﻿/*GENERAL*/
+﻿/*SOMEE INFO*/
+body > div:nth-child(n+2), body > center {
+  visibility: hidden;
+  height: 0px !important;
+}
+
+/*GENERAL*/
 @font-face {
   font-family: Segoe UI;
   src: local("Segoe UI"), url(../fonts/segoeui.TTF) format("truetype");
@@ -286,10 +292,21 @@ picture {
   bottom: 16px;
 }
 
-/*EXAMPLE*/
+.card {
+  display:initial;
+}
 
+.card-collapsed {
+  display:none;
+}
+
+.home-product-picture {
+  height: 500px;
+}
+
+/*EXAMPLE*/
 .example {
-  padding: 50px 150px;
+    padding: 50px 150px;
 }
 
 * {
