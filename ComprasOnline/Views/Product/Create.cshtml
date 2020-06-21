@@ -1,37 +1,31 @@
 ﻿
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Cargar producto";
 }
 
-<h2>Create</h2>
+<h2>Cargar producto</h2>
 
 <form method="post" action="/Product/Create">
-    <br />
     <label for="title">Título</label>
-    <br />
-    <input type="text" name="title" required />
-    <br />
+    <div>
+        <input type="text" class="form-control" id="title" name="title" value="" placeholder="">
+    </div>
     <label for="description">Descripción</label>
-    <br />
-    <input type="text" name="description" />
-    <br />
+    <div>
+        <input type="text" class="form-control" id="description" name="description" value="" placeholder="">
+    </div>
     <label for="artistId">Artista</label>
-    <br />
-    <input type="number" name="artistId" />
-    <br />
+    <div>
+        <input type="text" class="form-control" id="artistId" name="artistId" value="" placeholder="">
+    </div>
     <label for="image">Imagen</label>
-    <br />
-    <input type="text" name="image" />
-    <br />
+    <div>
+        <input type="text" class="form-control" id="image" name="image" value="" placeholder="">
+    </div>
     <label for="price">Precio ($)</label>
-    <br />
-    <input type="number" name="price" />
-    <br />
-    <label for="descripcion">Descripcion</label>
-    <br />
-    <input type="text" name="descripcion" />
-    <br />
-    <br />
-    <button type="submit">Guardar</button>
-    <br />
+    <div>
+        <input type="text" class="form-control" id="price" name="price" value="" placeholder="">
+    </div>
+
+    <button type="submit" class="btn button-success color-success">Guardar</button>
 </form>
