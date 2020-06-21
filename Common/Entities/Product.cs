@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common.Entities
 {
-    public class Product 
+    public class Product
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -16,10 +16,9 @@ namespace Common.Entities
         public double Price { get; set; }
         public int QuantitySold { get; set; }
         public double AvgStars { get; set; }
-        public System.DateTime CreatedOn { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.Now;
         public string CreatedBy { get; set; }
-        public System.DateTime ChangedOn { get; set; }
+        public DateTime ChangedOn { get; set; } = DateTime.Now;
         public string ChangedBy { get; set; }
-
     }
 }

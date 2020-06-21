@@ -12,7 +12,7 @@ namespace DataAccess.Implementations
     {
         public void Create(Product p)
         {
-            using (lppaDbContext db = new lppaDbContext())
+            using (DBEntities db = new DBEntities())
             {
                 db.Product.Add(p);
                 db.SaveChanges();
@@ -21,25 +21,26 @@ namespace DataAccess.Implementations
 
         public void Update(Product p)
         {
-            using (lppaDbContext db = new lppaDbContext())
+            using (DBEntities db = new DBEntities())
             {
                 db.Entry(p).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
         }
 
-        public void Delete(Product p)
+        public void Delete(int id)
         {
-            using (lppaDbContext db = new lppaDbContext())
+            using (DBEntities db = new DBEntities())
             {
-                db.Product.Remove(p);
+                Product product = db.Product.First(p => p.Id == id);
+                db.Product.Remove(product);
                 db.SaveChanges();
             }
         }
 
         public Product Get(int id)
         {
-            using (lppaDbContext db = new lppaDbContext())
+            using (DBEntities db = new DBEntities())
             {
                 return db.Product.Find(id);
             }
@@ -47,7 +48,7 @@ namespace DataAccess.Implementations
 
         public IEnumerable<Product> GetAll()
         {
-            using (lppaDbContext db = new lppaDbContext())
+            using (DBEntities db = new DBEntities())
             {
                 return db.Product;
             }

@@ -1,4 +1,5 @@
 ﻿using Common.Entities;
+using DataAccess.Facade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace BusinessLogic
     public class ProductManagement : IProductManagement
     {
         ProductDB ProDB = new ProductDB();
+        ProductFacade facade = new ProductFacade();
 
         public IList<Common.Entities.Product> GetAllProducts()
         {
@@ -40,38 +42,34 @@ namespace BusinessLogic
             return listaproductos; //RETORNO LA LISTA
         }
 
+        // todo: dejo opción por si lo queremos trabajar con el patrón Facade
+        //public IList<Product> GetAllProducts()
+        //{
+        //    return (IList<Product>)facade.GetAll();
+        //}
+
+        public Common.Entities.Product Get(int id)
+        {
+            return facade.Get(id);
+        }
+
         public bool AddProduct(Common.Entities.Product prod)
         {
-            DataAccess.Product pro = new DataAccess.Product();
+            facade.Create(prod);
 
-            //ASIGNACIONES DE PROPIEDADES
-            pro.ArtistId = prod.ArtistId;
-            pro.AvgStars = prod.ArtistId;
-            pro.ChangedBy = prod.ChangedBy;
-            pro.ChangedOn = prod.ChangedOn;
-            pro.CreatedBy = prod.CreatedBy;
-            pro.Description = prod.Description;
-            pro.Image = prod.Image;
-            pro.Price = prod.Price;
-            pro.Title = prod.Title;
-            
-            return ProDB.Guardar(pro);
+            // todo: que el facade devuelva booleano, o hacer void esto directamente
+            return true;
+        }
+
+
+        public void Update(Common.Entities.Product prod)
+        {
+             facade.Update(prod);
+        }
+
+        public void Delete(int id)
+        {
+            facade.Delete(id);
         }
     }
-
-    //public class Repo
-    //{
-    //    
-    //    private static IList<Common.Entities.Product> data = new List<Common.Entities.Product>();
-
-    //    public static IList<Common.Entities.Product> GetAll()
-    //    {
-    //        return data;
-    //    }
-
-    //    public void Add(Common.Entities.Product prod)
-    //    {
-    //        data.Add(prod);
-    //    }
-    //}
 }

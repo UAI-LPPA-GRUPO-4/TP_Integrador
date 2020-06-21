@@ -8,10 +8,9 @@
 
 
   <div class="product-list">
-
-    <p>
-      <a href="/Product/Create">Nuevo Producto</a>
-    </p>
+    <a href="/Product/Create">
+        <button class="btn button-success color-success">Nuevo Producto</button>
+    </a>
 
     <table>
       <thead>
@@ -21,19 +20,22 @@
           <th>Precio  </th>
           <th>Cantidad Vendidos   </th>
           <th>Calificación Promedio   </th>
+          <th colspan="2">Acciones</th>
         </tr>
       </thead>
       <tbody>
       </tbody>
       @foreach (Product item in Model)
       {
-        <tr>
-          <td> @item.Title    </td>
-          <td> @item.Description  </td>
-          <td> @item.Price    </td>
-          <td> @item.QuantitySold </td>
-          <td> @item.AvgStars </td>
-        </tr>
+    <tr>
+        <td> @item.Title    </td>
+        <td> @item.Description  </td>
+        <td> @item.Price    </td>
+        <td> @item.QuantitySold </td>
+        <td> @item.AvgStars </td>
+        <td class="color-success">@Html.ActionLink("Modificar", "Modify", "Product", new { id = item.Id }, null)</td>
+        <td class="color-warning">@Html.ActionLink("Eliminar", "Delete", "Product", new { id = item.Id }, null)</td>
+    </tr>
       }
 
     </table>
