@@ -32,7 +32,23 @@ namespace ComprasOnline.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection form)
         {
-            var product = new Product();
+      //var listModel = db.ValidateModel(artist);
+      //if (ModelIsValid(listModel))
+      //  return View(artist);
+      //try
+      //{
+      //  db.Create(artist);
+      //  return RedirectToAction("Index");
+
+      //}
+      //catch (Exception ex)
+      //{
+      //  Logger.Instance.LogException(ex);
+      //  ViewBag.MessageDanger = ex.Message;
+      //  return View(artist);
+      //}
+
+      var product = new Product();
 
             product.CreatedBy = "testUser";
             product.ChangedBy = "testUser";
