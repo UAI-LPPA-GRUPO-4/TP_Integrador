@@ -45,7 +45,7 @@ namespace ComprasOnline.Controllers
             product.AvgStars = double.Parse(form["avgStars"], System.Globalization.CultureInfo.InvariantCulture);
             product.Price = Convert.ToInt32(form["price"]);
 
-            bool result = ProductManagement.AddProduct(product);
+            ProductManagement.AddProduct(product);
             return RedirectToAction("Index");
         }
 
