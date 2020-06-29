@@ -9,7 +9,7 @@
 				{
 						var item = Model[i];
 						<div class="@(i == 0 ? "card":"card-collapsed")" card-number="@i">
-								<h1>@item.ArtistId - @item.Title.ToUpper()</h1>
+								<h1>@item.Artist.LastName - @item.Title.ToUpper()</h1>
 								<br />
 								<p class="main-description">
 										@item.Description

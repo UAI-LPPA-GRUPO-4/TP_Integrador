@@ -208,6 +208,10 @@ nav ul li a:hover {
   height: 50px;
 }
 
+.text-danger {
+  color: #e66a6a;
+}
+
 /*BODY*/
 .body {
 
@@ -411,17 +415,27 @@ footer p {
     padding: 15px;
   }
 
+/*USER*/
+#loginForm, .register-form {
+  /* margin: 80px 0px 0px 50px;*/
+  padding: 50px 150px;
+}
+
+#loginForm .input-text, .register-form .input-text {
+  width: 350px;
+}
+
 /* ABM Producto */
 /* TODO: evaluar poner esto en css separado */
 .form-control {
-    display: block;
-    width: 80%;
-    height: 22px;
-    padding: 6px 12px;
-    color: #555555;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  display: block;
+  width: 80%;
+  height: 22px;
+  padding: 6px 12px;
+  color: #555555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .form-control:focus {

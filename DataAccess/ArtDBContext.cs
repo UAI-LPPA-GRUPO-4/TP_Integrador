@@ -25,14 +25,11 @@ namespace DataAccess
       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
     }
 
-
-    //public virtual DbSet<Artist> Artist { get; set; }
-
     public virtual DbSet<Product> Product { get; set; }
-    
-
-    //public virtual DbSet<Error> Error { get; set; }
-    
+    public virtual DbSet<Artist> Artist { get; set; }
+    public virtual DbSet<Cart> Cart { get; set; }
+    public virtual DbSet<CartItem> CartItem { get; set; }
+    public virtual DbSet<User> User { get; set; }
 
   }
 }

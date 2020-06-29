@@ -15,20 +15,24 @@
 										<li><a href="/">Inicio</a></li>
 										<li><a href="/Product/Search">Buscar</a></li>
 										<li><a href="/Home/Contact">Contacto</a></li>
+									@if (User.IsInRole("Admin"))
+									{ 
 										<li><a href="/Product">Productos</a></li>
 										<li><a href="/Users">Usuarios</a></li>
 										<li><a href="/Artists">Artistas</a></li>
+									}
 								</ul>
 						</nav>
 
 						<ul class="icon_headers">
+								<li>@User.Identity.Name</li>
 								<li>
 										<a href="/Cart">
 												<img class="icon" src="~/Content/Images/cart.icon.png" />
 										</a>
 								</li>
 								<li>
-										<a href="/User">
+										<a href="/Account/LoginLogout">
 												<img class="icon" src="~/Content/Images/user.icon.png" />
 										</a>
 								</li>
@@ -52,7 +56,7 @@
 						</div>
 				</footer>
 		</div>
-		@Scripts.Render("~/bundles/jquery");
+		@Scripts.Render("~/bundles/jquery")
 		@RenderSection("scripts", required: false)
 
 </body>
