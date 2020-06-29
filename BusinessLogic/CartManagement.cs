@@ -39,5 +39,20 @@ namespace BusinessLogic
 				dbCartItem.Create(item);
 
 		}
+
+		public CartItem GetItem(int id)
+		{
+			return dbCartItem.Get(x => x.Id == id).FirstOrDefault();
+		}
+
+		public void UpdateItem(CartItem item)
+		{
+			dbCartItem.Update(item);
+		}
+
+		public void RemoveItem(CartItem item)
+		{
+			dbCartItem.Delete(item);
+		}
 	}
 }

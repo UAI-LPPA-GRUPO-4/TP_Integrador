@@ -37,11 +37,47 @@ namespace ComprasOnline.Controllers
 
 			var prod = ProductManagement.Get(id);
 
-			var item = new CartItem() { CartId = cart.Id, ProductId = prod.Id, Price = prod.Price };
+			var item = new CartItem() { CartId = cart.Id, ProductId = prod.Id, Price = prod.Price, Quantity = 1 };
 
 			CheckAuditPattern(item, true);
 
 			Management.AddItem(item);
+
+			return Index();
+		}
+
+		public ActionResult Increase(int id)
+		{
+			var item = Management.GetItem(id);
+			item.Quantity++;
+			item.Price = item.Product.Price * item.Quantity;
+			CheckAuditPattern(item, false);
+
+			Management.UpdateItem(item);
+
+			return Index();
+		}
+
+		public ActionResult Decrease(int id)
+		{
+			var item = Management.GetItem(id);
+
+			if (item.Quantity > 1)
+			{
+				item.Quantity--;
+				item.Price = item.Product.Price * item.Quantity;
+				CheckAuditPattern(item, false);
+
+				Management.UpdateItem(item);
+			}
+
+			return Index();
+		}
+
+		public ActionResult Delete(int id)
+		{
+			var item = Management.GetItem(id);
+			Management.RemoveItem(item);
 
 			return Index();
 		}
