@@ -515,3 +515,25 @@ select {
 select option {
     color: #555555;
 }
+
+/*CART*/
+
+.cart-form {
+  margin: 20px;
+}
+
+.cart-form th, .cart-form td {
+  padding: 15px;
+}
+
+.cart-form td a:hover {
+  color: #3C47D8;
+}
+
+.contact-panel {
+  margin: 50px auto;
+}
+
+.contact-panel a:hover {
+  color: #3C47D8;
+}
