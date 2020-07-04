@@ -91,7 +91,5 @@ namespace DataAccess.Implementations
       _db.SaveChanges();
       return entity;
     }
-
-
   }
 }

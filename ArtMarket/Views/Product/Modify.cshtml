@@ -32,7 +32,8 @@
         </div>
         <label for="image">Imagen</label>
         <div>
-            <input type="text" class="form-control" id="image" name="image" value="@Model.Image" placeholder="">
+            <p class="small-text">Archivo actual: @(Model.Image ?? "ninguno")</p>
+            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
         </div>
         <label for="price">Precio ($)</label>
         <div>

@@ -3,6 +3,7 @@ using BusinessLogic;
 using Common.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -54,14 +55,29 @@ namespace ComprasOnline.Controllers
 			product.Title = form["title"];
 			product.Description = form["description"];
 			product.ArtistId = Convert.ToInt32(form["artistId"]);
-			product.Image = form["image"];
 			product.QuantitySold = Convert.ToInt32(form["quantitySold"]);
 			product.AvgStars = double.Parse(form["avgStars"], System.Globalization.CultureInfo.InvariantCulture);
 			product.Price = Convert.ToInt32(form["price"]);
 
-			CheckAuditPattern(product, false);
+			// Imagen
+			if (Request.Files.Count > 0)
+			{
+				var file = Request.Files[0];
+
+				if (file != null && file.ContentLength > 0)
+				{
+					var fileName = Path.GetFileName(file.FileName);
+					var path = Path.Combine(Server.MapPath("~/Images/"), fileName);
+					file.SaveAs(path);
+					
+					product.Image = file.FileName;
+				}
+			}
+
+			CheckAuditPattern(product, true);
 			ProductManagement.AddProduct(product);
-			return RedirectToAction("Index");
+
+			return RedirectToAction("Index", "Home");
 		}
 
 		public ActionResult Modify(int id)
@@ -92,7 +108,7 @@ namespace ComprasOnline.Controllers
 		[HttpPost]
 		public ActionResult DoUpdate(Product product)
 		{
-			CheckAuditPattern(product, true);
+			CheckAuditPattern(product);
 			ProductManagement.Update(product);
 			return RedirectToAction("Index");
 		}

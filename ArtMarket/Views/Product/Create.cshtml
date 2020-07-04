@@ -5,7 +5,7 @@
 <div class="container">
     <h2>Cargar producto</h2>
 
-    <form method="post" action="/Product/Create">
+    <form method="post" action="/Product/Create" enctype="multipart/form-data">
         <label for="title">Título</label>
         <div>
             <input type="text" class="form-control" id="title" name="title" value="" placeholder="">
@@ -31,7 +31,7 @@
         </div>
         <label for="image">Imagen</label>
         <div>
-            <input type="text" class="form-control" id="image" name="image" value="" placeholder="">
+            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
         </div>
         <label for="price">Precio ($)</label>
         <div>
