@@ -30,6 +30,10 @@ namespace DataAccess
     public virtual DbSet<Cart> Cart { get; set; }
     public virtual DbSet<CartItem> CartItem { get; set; }
     public virtual DbSet<User> User { get; set; }
+    public virtual DbSet<Error> Error { get; set; }
+    public virtual DbSet<Order> Order { get; set; }
+    public virtual DbSet<OrderDetail> OrderDetail { get; set; }
+    public virtual DbSet<OrderNumber> OrderNumber { get; set; }
 
   }
 }
