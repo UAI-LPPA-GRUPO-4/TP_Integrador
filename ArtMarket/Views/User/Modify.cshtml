@@ -1,0 +1,47 @@
+﻿@using Common.Entities;
+@model User
+@{
+    ViewBag.Title = "Modificar usuario";
+}
+<div class="container">
+    <h2>Modificar usuario</h2>
+
+    <form method="post" action="/User/DoUpdate">
+        <label for="firstName">Nombre</label>
+        <div>
+            <input type="text" class="form-control" id="firstName" name="firstName" value="@Model.FirstName">
+        </div>
+        <label for="lastName">Apellido</label>
+        <div>
+            <input type="text" class="form-control" id="lastName" name="lastName" value="@Model.LastName"">
+        </div>
+
+        <label for="email">Email</label>
+        <div>
+            <input type="text" class="form-control" id="email" name="email" value="@Model.Email">
+        </div>
+        <label for="city">Ciudad</label>
+        <div>
+            <input type="text" class="form-control" id="city" name="city" value="@Model.City">
+        </div>
+        <label for="country">País</label>
+        <div>
+            <input type="text" class="form-control" id="country" name="country" value="@Model.Country">
+        </div>
+
+        <label for="signupDate">Fecha de registro</label>
+        <div>
+            <input type="date" class="form-control" id="signupDate" name="signupDate"
+                   value="@Model.SignupDate.ToString("yyyy-MM-dd")" min="2017-01-01" max="2020-08-01">
+        </div>
+
+        <label for="orderCount">Cantidad de pedidos</label>
+        <div>
+            <input type="number" class="form-control" id="orderCount" name="orderCount" min="0" max="500" value="@Model.OrderCount">
+        </div>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <button type="submit" class="btn button-success color-success">Guardar</button>
+    </form>
+</div>
