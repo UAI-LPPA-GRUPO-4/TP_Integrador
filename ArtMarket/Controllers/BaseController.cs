@@ -4,11 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BusinessLogic;
+using BusinessLogic.Contracts;
+using Common.Entities;
 
 namespace ArtMarket.Controllers
 {
   public class BaseController : Controller
   {
+        public IErrorManagment ErrorManagment { get; set; }
+    
     protected bool ModelIsValid(List<ValidationResult> listModel)
     {
       var message = string.Empty;
@@ -51,5 +56,16 @@ namespace ArtMarket.Controllers
 
       return userId;
     }
-  }
+
+    protected override void OnException(ExceptionContext filterContext)
+    {
+            Error error = new Error();
+            CheckAuditPattern(error, false);
+            error.ErrorDate = DateTime.Now;
+            error.Exception = filterContext.Exception.GetType().ToString();
+            error.Message = filterContext.Exception.Message.ToString();
+            //ErrorManagment.AddError(error);
+            base.OnException(filterContext);
+    }
+    }
 }

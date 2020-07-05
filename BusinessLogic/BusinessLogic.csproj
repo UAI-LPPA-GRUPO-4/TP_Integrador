@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IErrorManagment.cs" />
     <Compile Include="Contracts\IUserManagement.cs" />
     <Compile Include="CartManagement.cs" />
     <Compile Include="Contracts\ICartManagement.cs" />
+    <Compile Include="ErrorMangment.cs" />
     <Compile Include="UserManagement.cs" />
     <Compile Include="ProductManagement.cs" />
     <Compile Include="Contracts\IProductManagement.cs" />
