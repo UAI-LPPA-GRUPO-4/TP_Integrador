@@ -17,10 +17,7 @@
         </div>
         <label for="artistId">Artista</label>
         <div>
-            <select name="artistId" id="artistId">
-                <option value="1" @(1 == Model.ArtistId ? "selected" : "")>Artista 1</option>
-                <option value="2" @(2 == Model.ArtistId ? "selected" : "")>Artista 2</option>
-            </select>
+            @Html.DropDownList("ArtistId", ViewBag.ArtistList as IEnumerable<SelectListItem>)
         </div>
         <label for="quantitySold">Cantidad vendida</label>
         <div>

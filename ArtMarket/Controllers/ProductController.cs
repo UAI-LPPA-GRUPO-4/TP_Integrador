@@ -1,5 +1,6 @@
 ﻿using ArtMarket.Controllers;
 using BusinessLogic;
+using BusinessLogic.Contracts;
 using Common.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,12 @@ namespace ComprasOnline.Controllers
 	public class ProductController : BaseController
 	{
 		public IProductManagement ProductManagement { get; set; }
+		public IArtistManagement ArtistManagement { get; set; }
 
 		public ProductController()
 		{
 			ProductManagement = new ProductManagement();
+			ArtistManagement = new ArtistManagement();
 		}
 
 		// GET: Product
@@ -27,7 +30,17 @@ namespace ComprasOnline.Controllers
 
 		public ActionResult Create()
 		{
-			// todo: pasarle la lista de artistas para armar el select option
+			var artistList = new List<SelectListItem>();
+
+			artistList.AddRange(ArtistManagement.GetAll()
+				.Select(a => new SelectListItem
+				{
+					Value = a.Id.ToString(),
+					Text = a.LastName
+				}));
+
+			ViewBag.ArtistList = artistList;
+
 			return View();
 		}
 
@@ -59,7 +72,7 @@ namespace ComprasOnline.Controllers
 			product.AvgStars = double.Parse(form["avgStars"], System.Globalization.CultureInfo.InvariantCulture);
 			product.Price = Convert.ToInt32(form["price"]);
 
-			// Imagen
+			// uploaded image
 			if (Request.Files.Count > 0)
 			{
 				var file = Request.Files[0];
@@ -77,12 +90,25 @@ namespace ComprasOnline.Controllers
 			CheckAuditPattern(product, true);
 			ProductManagement.AddProduct(product);
 
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Index");
 		}
 
 		public ActionResult Modify(int id)
 		{
 			Product product = ProductManagement.Get(id);
+
+			var artistList = new List<SelectListItem>();
+			artistList.AddRange(ArtistManagement.GetAll()
+				.Select(a => new SelectListItem
+				{
+					Value = a.Id.ToString(),
+					Text = a.LastName
+				})); ;
+
+			artistList.Where(x => x.Value == product.ArtistId.ToString()).First().Selected = true;
+
+			ViewBag.ArtistList = artistList;
+
 			return View(product);
 		}
 

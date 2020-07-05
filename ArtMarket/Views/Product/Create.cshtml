@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Cargar producto";
 }
 <div class="container">
@@ -16,10 +15,7 @@
         </div>
         <label for="artistId">Artista</label>
         <div>
-            <select name="artistId" id="artistId">
-                <option value="1" selected>Artista 1</option>
-                <option value="2">Artista 2</option>
-            </select>
+            @Html.DropDownList("ArtistId", ViewBag.ArtistList as IEnumerable<SelectListItem>)
         </div>
         <label for="quantitySold">Cantidad vendida</label>
         <div>

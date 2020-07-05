@@ -28,12 +28,12 @@
       @foreach (Artist artist in Model)
       {
     <tr>
-        <td> @artist.FirstName    </td>
-        <td> @artist.LastName  </td>
-        <td> @artist.LifeSpan    </td>
-        <td> @artist.Country </td>
-        <td> @artist.Description </td>
-        <td> @artist.TotalProducts </td>
+        <td> @artist.FirstName</td>
+        <td> @artist.LastName</td>
+        <td> @artist.LifeSpan</td>
+        <td> @artist.Country</td>
+        <td> @artist.Description</td>
+        <td> @artist.TotalProducts</td>
         <td class="color-success">@Html.ActionLink("Modificar", "Modify", "Artist", new { id = artist.Id }, null)</td>
         <td class="color-warning">@Html.ActionLink("Eliminar", "Delete", "Artist", new { id = artist.Id }, null)</td>
     </tr>

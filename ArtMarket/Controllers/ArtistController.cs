@@ -16,7 +16,7 @@ namespace ComprasOnline.Controllers
 			ArtistManagement = new ArtistManagement();
 		}
 
-		// GET: Product
+		// GET: Artist
 		public ActionResult Index()
 		{
 			return View(ArtistManagement.GetAll());
@@ -46,12 +46,6 @@ namespace ComprasOnline.Controllers
 		}
 
 		public ActionResult Modify(int id)
-		{
-			Artist artist = ArtistManagement.Get(id);
-			return View(artist);
-		}
-
-		public ActionResult Details(int id)
 		{
 			Artist artist = ArtistManagement.Get(id);
 			return View(artist);
