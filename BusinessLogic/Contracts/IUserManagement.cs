@@ -8,6 +8,7 @@ namespace BusinessLogic
 		IList<User> GetAll();
 		void Add(User user);
 		User Get(string email);
+		User Get(int id);
 		void Update(User user);
 		void Delete(int id);
 	}

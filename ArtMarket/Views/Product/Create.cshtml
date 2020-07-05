@@ -1,11 +1,10 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Cargar producto";
 }
 <div class="container">
     <h2>Cargar producto</h2>
 
-    <form method="post" action="/Product/Create">
+    <form method="post" action="/Product/Create" enctype="multipart/form-data">
         <label for="title">Título</label>
         <div>
             <input type="text" class="form-control" id="title" name="title" value="" placeholder="">
@@ -16,10 +15,7 @@
         </div>
         <label for="artistId">Artista</label>
         <div>
-            <select name="artistId" id="artistId">
-                <option value="1" selected>Artista 1</option>
-                <option value="2">Artista 2</option>
-            </select>
+            @Html.DropDownList("ArtistId", ViewBag.ArtistList as IEnumerable<SelectListItem>)
         </div>
         <label for="quantitySold">Cantidad vendida</label>
         <div>
@@ -31,7 +27,7 @@
         </div>
         <label for="image">Imagen</label>
         <div>
-            <input type="text" class="form-control" id="image" name="image" value="" placeholder="">
+            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
         </div>
         <label for="price">Precio ($)</label>
         <div>

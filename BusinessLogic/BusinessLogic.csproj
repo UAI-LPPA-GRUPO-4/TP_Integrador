@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistManagement.cs" />
+    <Compile Include="Contracts\IArtistManagement.cs" />
     <Compile Include="Contracts\IUserManagement.cs" />
     <Compile Include="CartManagement.cs" />
     <Compile Include="Contracts\ICartManagement.cs" />

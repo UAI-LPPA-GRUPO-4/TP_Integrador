@@ -1,0 +1,41 @@
+﻿@using Common.Entities;
+@model Artist
+@{
+    ViewBag.Title = "Modificar artista";
+}
+<div class="container">
+    <h2>Modificar artista</h2>
+
+    <form method="post" action="/Artist/DoUpdate">
+        <label for="firstName">Nombre</label>
+        <div>
+            <input type="text" class="form-control" id="firstName" name="firstName" value="@Model.FirstName" placeholder="">
+        </div>
+        <label for="lastName">Apellido</label>
+        <div>
+            <input type="text" class="form-control" id="lastName" name="lastName" value="@Model.LastName" placeholder="">
+        </div>
+
+        <label for="lifeSpan">Años de vida</label>
+        <div>
+            <input type="number" class="form-control" id="lifeSpan" name="lifeSpan" min="1" max="110" value="@Model.LifeSpan">
+        </div>
+        <label for="country">País</label>
+        <div>
+            <input type="text" class="form-control" id="country" name="country" value="@Model.Country" placeholder="">
+        </div>
+
+        <label for="description">Descripción</label>
+        <div>
+            <input type="text" class="form-control" id="description" name="description" value="@Model.Description" placeholder="">
+        </div>
+        <label for="totalProducts">Cantidad de cuadros</label>
+        <div>
+            <input type="number" class="form-control" id="totalProducts" name="totalProducts" min="1" max="500" value="@Model.TotalProducts">
+        </div>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <button type="submit" class="btn button-success color-success">Guardar</button>
+    </form>
+</div>

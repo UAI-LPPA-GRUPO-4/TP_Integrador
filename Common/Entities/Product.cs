@@ -10,8 +10,6 @@ namespace Common.Entities
 {
 	public class Product : IdentityBase
 	{
-		public int Id { get; set; }
-
 		[Required]
 		[DisplayName("Nombre")]
 		public string Title { get; set; }

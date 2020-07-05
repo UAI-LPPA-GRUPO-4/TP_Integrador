@@ -11,8 +11,6 @@ namespace Common.Entities
 			this.Products = new HashSet<Product>();
 		}
 
-		public int Id { get; set; }
-
 		[Required]
 		[DisplayName("Nombre")]
 		public string FirstName { get; set; }

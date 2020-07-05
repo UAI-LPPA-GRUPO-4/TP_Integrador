@@ -21,7 +21,18 @@ namespace BusinessLogic
 
 		public Product Get(int id)
 		{
-			return db.Get(x => x.Id == id).FirstOrDefault();
+			return db.GetById(id);
+		}
+
+		/// <summary>
+		/// Gets a product which is not being tracked by Entity Framework.
+		/// It can be used to show values that won't be modified.
+		/// </summary>
+		/// <param name="id">The Product ID</param>
+		/// <returns>The Product entity</returns>
+		public Product GetAsNoTracking(int id)
+		{
+			return db.GetByIdAsNoTracking(id);
 		}
 
 		public void AddProduct(Product prod)
@@ -38,5 +49,5 @@ namespace BusinessLogic
 		{
 			db.Delete(id);
 		}
-	}
+    }
 }

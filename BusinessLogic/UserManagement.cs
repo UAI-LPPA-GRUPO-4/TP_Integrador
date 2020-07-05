@@ -24,6 +24,11 @@ namespace BusinessLogic
 			return db.Get(x => x.Email == email).FirstOrDefault();
 		}
 
+		public User Get(int id)
+		{
+			return db.GetById(id);
+		}
+
 		public void Add(User user)
 		{
 			db.Create(user);
@@ -38,5 +43,5 @@ namespace BusinessLogic
 		{
 			db.Delete(id);
 		}
-	}
+    }
 }

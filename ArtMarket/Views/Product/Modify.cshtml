@@ -17,10 +17,7 @@
         </div>
         <label for="artistId">Artista</label>
         <div>
-            <select name="artistId" id="artistId">
-                <option value="1" @(1 == Model.ArtistId ? "selected" : "")>Artista 1</option>
-                <option value="2" @(2 == Model.ArtistId ? "selected" : "")>Artista 2</option>
-            </select>
+            @Html.DropDownList("ArtistId", ViewBag.ArtistList as IEnumerable<SelectListItem>)
         </div>
         <label for="quantitySold">Cantidad vendida</label>
         <div>
@@ -32,7 +29,8 @@
         </div>
         <label for="image">Imagen</label>
         <div>
-            <input type="text" class="form-control" id="image" name="image" value="@Model.Image" placeholder="">
+            <p class="small-text">Archivo actual: @(Model.Image ?? "ninguno")</p>
+            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
         </div>
         <label for="price">Precio ($)</label>
         <div>
