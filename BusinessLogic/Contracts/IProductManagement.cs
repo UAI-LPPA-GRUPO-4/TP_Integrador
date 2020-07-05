@@ -8,6 +8,7 @@ namespace BusinessLogic
 		IList<Product> GetAllProducts();
 		void AddProduct(Product prod);
 		Product Get(int id);
+		Product GetAsNoTracking(int id);
 		void Update(Product prod);
 		void Delete(int id);
 	}

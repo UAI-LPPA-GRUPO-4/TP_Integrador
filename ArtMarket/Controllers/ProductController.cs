@@ -108,8 +108,15 @@ namespace ComprasOnline.Controllers
 		[HttpPost]
 		public ActionResult DoUpdate(Product product)
 		{
+			// If there is not a new image, we recover the previous one
+			if (product.Image == null) {
+				Product originalProduct = ProductManagement.GetAsNoTracking(product.Id);
+				product.Image = originalProduct.Image;
+			}
+			
 			CheckAuditPattern(product);
 			ProductManagement.Update(product);
+
 			return RedirectToAction("Index");
 		}
 

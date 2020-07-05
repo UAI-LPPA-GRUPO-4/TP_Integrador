@@ -66,9 +66,16 @@ namespace DataAccess.Implementations
       return _db.Set<T>().SingleOrDefault(x => x.Id == id);
     }
 
+    public virtual T GetByIdAsNoTracking(int id)
+    {
+        return _db.Set<T>().AsNoTracking().SingleOrDefault(x => x.Id == id);
+    }
+
     public virtual void Update(T entity)
     {
       _db.Entry(entity).State = EntityState.Modified;
+      _db.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+      _db.Entry(entity).Property(x => x.CreatedOn).IsModified = false;
       _db.SaveChanges();
     }
 
