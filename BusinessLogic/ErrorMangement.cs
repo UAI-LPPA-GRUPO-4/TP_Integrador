@@ -7,11 +7,11 @@ using BusinessLogic.Contracts;
 
 namespace BusinessLogic
 {
-    public class ErrorMangment : IErrorManagment
+    public class ErrorMangement : IErrorManagement
     {
         BaseDataService<Error> db;
 
-        public ErrorMangment()
+        public ErrorMangement()
         {
             db = new BaseDataService<Error>();
         }

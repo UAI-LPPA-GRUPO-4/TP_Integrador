@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BusinessLogic.Contracts
 {
-    public interface IErrorManagment
+    public interface IErrorManagement
     {
         IList<Error> GetAllErros();
         void AddError(Error error);

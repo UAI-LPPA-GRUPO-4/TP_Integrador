@@ -12,9 +12,14 @@ namespace ArtMarket.Controllers
 {
   public class BaseController : Controller
   {
-        public IErrorManagment ErrorManagment { get; set; }
-    
-    protected bool ModelIsValid(List<ValidationResult> listModel)
+    public IErrorManagement ErrorManagment { get; set; }
+
+    public BaseController()
+    {
+            ErrorManagment = new ErrorMangement();
+    }
+
+        protected bool ModelIsValid(List<ValidationResult> listModel)
     {
       var message = string.Empty;
       var result = listModel != null && listModel.Count > 0;
@@ -35,6 +40,7 @@ namespace ArtMarket.Controllers
       {
         model.CreatedOn = DateTime.Now;
         model.CreatedBy = userId;
+        model.ChangedOn = DateTime.Now;
       }
       model.ChangedOn = DateTime.Now;
       model.ChangedBy = userId;
@@ -58,14 +64,22 @@ namespace ArtMarket.Controllers
     }
 
     protected override void OnException(ExceptionContext filterContext)
-    {
+        {
             Error error = new Error();
-            CheckAuditPattern(error, false);
+            CheckAuditPattern(error, true);
             error.ErrorDate = DateTime.Now;
             error.Exception = filterContext.Exception.GetType().ToString();
             error.Message = filterContext.Exception.Message.ToString();
-            //ErrorManagment.AddError(error);
-            base.OnException(filterContext);
+            try
+            {
+                ErrorManagment.AddError(error);
+                base.OnException(filterContext);
+            }
+            catch (Exception ex)
+            {
+                base.OnException(filterContext);
+            }    
     }
-    }
+
+   }
 }
