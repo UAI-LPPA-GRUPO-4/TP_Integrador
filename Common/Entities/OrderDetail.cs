@@ -17,7 +17,7 @@ namespace Common.Entities
         [Required]
         public int ProductId { get; set; }
         [Required]
-        public float Price { get; set; }
+        public double Price { get; set; }
         [Required]
         public int Quantity { get; set; }
         

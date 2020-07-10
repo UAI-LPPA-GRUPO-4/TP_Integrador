@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IErrorManagement.cs" />
+    <Compile Include="Contracts\IOrderManagement.cs" />
     <Compile Include="Contracts\IUserManagement.cs" />
     <Compile Include="CartManagement.cs" />
     <Compile Include="Contracts\ICartManagement.cs" />
     <Compile Include="ErrorMangement.cs" />
+    <Compile Include="OrderManagement.cs" />
     <Compile Include="UserManagement.cs" />
     <Compile Include="ProductManagement.cs" />
     <Compile Include="Contracts\IProductManagement.cs" />

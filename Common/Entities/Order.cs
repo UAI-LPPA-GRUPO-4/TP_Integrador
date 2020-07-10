@@ -24,7 +24,7 @@ namespace Common.Entities
         [Required]
         public DateTime OrderDate { get; set; }
         [Required]
-        public float TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
         [Required]
         public int OrderNumber { get; set; }
         [Required]
