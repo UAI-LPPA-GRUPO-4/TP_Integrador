@@ -54,5 +54,10 @@ namespace BusinessLogic
 		{
 			dbCartItem.Delete(item);
 		}
-	}
+
+        public void Remove(int id)
+        {
+            db.Delete(id);
+        }
+    }
 }

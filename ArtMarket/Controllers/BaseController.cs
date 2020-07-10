@@ -19,7 +19,7 @@ namespace ArtMarket.Controllers
             ErrorManagment = new ErrorMangement();
     }
 
-        protected bool ModelIsValid(List<ValidationResult> listModel)
+    protected bool ModelIsValid(List<ValidationResult> listModel)
     {
       var message = string.Empty;
       var result = listModel != null && listModel.Count > 0;

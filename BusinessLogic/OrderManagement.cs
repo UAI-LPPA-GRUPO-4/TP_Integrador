@@ -14,12 +14,13 @@ namespace BusinessLogic
 
         BaseDataService<Order> db;
 
-        BaseDataService<Order> dbOrderDetail;
+        BaseDataService<OrderNumber> dbOrderNumber;
         public UserManagement UserManagement { get; set; }
 
         public OrderManagement()
         {
             db = new BaseDataService<Order>();
+            dbOrderNumber = new BaseDataService<OrderNumber>();
             UserManagement = new UserManagement();
         }
 
@@ -41,6 +42,20 @@ namespace BusinessLogic
         public void UpdateItem(Order item)
         {
             throw new NotImplementedException();
+        }
+
+        public OrderNumber AddOrderNumber(OrderNumber number)
+        {
+            dbOrderNumber.Create(number);
+            return number;
+        }
+
+        public IList<OrderNumber> GetAllOrderNumber()
+        {
+            List<OrderNumber> ListOrderNumber = new List<OrderNumber>();
+            ListOrderNumber = dbOrderNumber.Get();
+            return ListOrderNumber;
+
         }
     }
 }

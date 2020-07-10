@@ -9,6 +9,8 @@ namespace BusinessLogic.Contracts
         void AddOrder(Order order);
         Order GetItem(int id);
         void UpdateItem(Order item);
+        OrderNumber AddOrderNumber(OrderNumber number);
+        IList<OrderNumber> GetAllOrderNumber();
 
     }
 }
