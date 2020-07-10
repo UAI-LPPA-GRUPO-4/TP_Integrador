@@ -45,7 +45,11 @@
     <Compile Include="Entities\Artist.cs" />
     <Compile Include="Entities\CartItem.cs" />
     <Compile Include="Entities\Cart.cs" />
+    <Compile Include="Entities\OrderDetail.cs" />
+    <Compile Include="Entities\Error.cs" />
     <Compile Include="Entities\IdentityBase.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderNumber.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

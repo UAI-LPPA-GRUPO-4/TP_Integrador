@@ -9,5 +9,6 @@ namespace BusinessLogic.Contracts
 		void AddItem(CartItem item);
 		CartItem GetItem(int id);
 		void UpdateItem(CartItem item);
+        void Remove(int id);
 	}
 }
