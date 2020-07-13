@@ -527,6 +527,10 @@ select option {
     color: #555555;
 }
 
+td a .icon {
+  height: 35px;
+}
+
 /*CART*/
 
 .cart-form {
@@ -547,4 +551,92 @@ select option {
 
 .contact-panel a:hover {
   color: #3C47D8;
+}
+
+/*ORDER*/
+.order-form {
+  margin: 20px;
+}
+
+.order-form h2 {
+  margin: 10px;
+}
+
+.order-form div {
+  min-width: 315px;
+}
+
+.order-form form {
+  margin: 0px auto;
+}
+
+.card-number, .card-name {
+  width: 400px;
+}
+
+.credit-card-icon {
+  height: 60px;
+  display: flex;
+  float: right;
+}
+
+/*ARTIST*/
+.artistpanel {
+  margin: 20px;
+}
+
+.artistpanel h2 {
+  margin: 10px;
+}
+
+.artistpanel div {
+  min-width: 315px;
+}
+
+.artistpanel form {
+  margin: 0px auto;
+}
+
+/*USER*/
+.userpanel {
+  margin: 20px;
+}
+
+.userpanel h2 {
+  margin: 10px;
+}
+
+.userpanel div {
+  min-width: 315px;
+}
+
+.userpanel form {
+  margin: 0px auto;
+}
+
+/*PRODUCT*/
+.productpanel {
+  margin: 20px;
+}
+
+.productpanel h2 {
+  margin: 10px;
+}
+
+.productpanel div {
+  min-width: 315px;
+}
+
+.productpanel form {
+  margin: 0px auto;
+}
+
+.form-control-file {
+  font-family: Segoe UI;
+  color: white;
+  font-size: 24px;
+}
+
+.productpanel .stars {
+  width: 280px;
 }

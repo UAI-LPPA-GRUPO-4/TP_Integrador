@@ -9,7 +9,7 @@
 
   <div class="product-list">
     <a href="/Product/Create">
-        <button class="btn button-success color-success">Nuevo Producto</button>
+        <button class="button-principal">Agregar</button>
     </a>
 
     <table>
@@ -35,8 +35,18 @@
         <td> @item.Price</td>
         <td> @item.QuantitySold</td>
         <td> @item.AvgStars</td>
-        <td class="color-success">@Html.ActionLink("Modificar", "Modify", "Product", new { id = item.Id }, null)</td>
-        <td class="color-warning">@Html.ActionLink("Eliminar", "Delete", "Product", new { id = item.Id }, null)</td>
+        <td>
+          <a href="/Product/Modify/@item.Id">
+            <img class="icon" src="~/Content/Images/edit.icon.png" />
+          </a>
+          <!--@Html.ActionLink("Modificar", "Modify", "Product", new { id = item.Id }, null)-->
+        </td>
+        <td>
+          <a href="/Product/Delete/@item.Id">
+            <img class="icon" src="~/Content/Images/trash.icon.png" />
+          </a>
+          <!--@Html.ActionLink("Eliminar", "Delete", "Product", new { id = item.Id }, null)-->
+        </td>
     </tr>
       }
 

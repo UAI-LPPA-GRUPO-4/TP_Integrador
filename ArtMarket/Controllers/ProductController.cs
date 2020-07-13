@@ -80,7 +80,7 @@ namespace ComprasOnline.Controllers
 				if (file != null && file.ContentLength > 0)
 				{
 					var fileName = Path.GetFileName(file.FileName);
-					var path = Path.Combine(Server.MapPath("~/Images/"), fileName);
+					var path = Path.Combine(Server.MapPath("~/Content/Images/Products"), fileName);
 					file.SaveAs(path);
 					
 					product.Image = file.FileName;

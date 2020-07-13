@@ -11,17 +11,18 @@
 		<div>
 				<header>
 						<nav class="header_menu">
-								<ul>
-										<li><a href="/">Inicio</a></li>
-										<li><a href="/Product/Search">Buscar</a></li>
-										<li><a href="/Home/Contact">Contacto</a></li>
-									@if (User.IsInRole("Admin"))
-									{ 
-										<li><a href="/Product">Productos</a></li>
-										<li><a href="/User">Usuarios</a></li>
-										<li><a href="/Artist">Artistas</a></li>
-									}
-								</ul>
+							<ul>
+								<li><a href="/">Inicio</a></li>
+								<li><a href="/Product/Search">Buscar</a></li>
+								<li><a href="/Home/Contact">Contacto</a></li>
+								@if (User.IsInRole("Admin"))
+								{
+									<li><a href="/Product">Productos</a></li>
+									<li><a href="/User">Usuarios</a></li>
+									<li><a href="/Artist">Artistas</a></li>
+									<li><a href="/Order">Ordenes</a></li>
+								}
+							</ul>
 						</nav>
 
 						<ul class="icon_headers">

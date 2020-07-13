@@ -20,6 +20,7 @@ namespace Common.Entities
         public double Price { get; set; }
         [Required]
         public int Quantity { get; set; }
-        
-    }
+
+        public virtual Product Product { get; set; }
+  }
 }

@@ -168,12 +168,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,16 +189,20 @@
     <Content Include="Content\Images\background.full.png" />
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\cart.icon.png" />
+    <Content Include="Content\Images\credit-card.icon.png" />
     <Content Include="Content\Images\cuadro.png" />
+    <Content Include="Content\Images\edit.icon.png" />
     <Content Include="Content\Images\Elipse 2.png" />
     <Content Include="Content\Images\Elipse 3.png" />
     <Content Include="Content\Images\evenlope.icon.png" />
+    <Content Include="Content\Images\file.icon.png" />
     <Content Include="Content\Images\Imagen 2%402x.png" />
     <Content Include="Content\Images\left.icon.png" />
     <Content Include="Content\Images\Products\onofrio-pacenza-chascomus.jpg" />
     <Content Include="Content\Images\Products\onofrio-pacenza-PORTUARIA.png" />
     <Content Include="Content\Images\Products\onofrio-serigrafia.jpg" />
     <Content Include="Content\Images\right.icon.png" />
+    <Content Include="Content\Images\trash.icon.png" />
     <Content Include="Content\Images\user.icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -258,6 +264,14 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Checkout.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Modify.cshtml" />
+    <Content Include="Views\Artist\Create.cshtml" />
+    <Content Include="Views\Artist\Index.cshtml" />
+    <Content Include="Views\Artist\Modify.cshtml" />
+    <Content Include="Views\Order\Payment.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

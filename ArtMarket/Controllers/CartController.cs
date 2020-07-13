@@ -23,10 +23,14 @@ namespace ComprasOnline.Controllers
 			ProductManagement = new ProductManagement();
 		}
 
-		public ActionResult Index()
+		public ActionResult Index(Cart cart = null)
 		{
-			var user = TryGetUserId();
-			var cart = Management.Get(user);
+			if (cart == null)
+			{
+				var user = TryGetUserId();
+				cart = Management.Get(user);
+			}
+			
 			return View("Index", cart);
 		}
 
@@ -43,7 +47,13 @@ namespace ComprasOnline.Controllers
 
 			Management.AddItem(item);
 
-			return Index();
+			if (!cart.CartItems.Any(x => x.ProductId == item.ProductId))
+			{
+				item.Product = prod;
+				cart.CartItems.Add(item); 
+			}
+
+			return Index(cart);
 		}
 
 		public ActionResult Increase(int id)
